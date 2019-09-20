@@ -4,7 +4,7 @@
 #
 Name     : mvn-junit5
 Version  : 5.4.0
-Release  : 2
+Release  : 3
 URL      : https://github.com/junit-team/junit5/archive/r5.4.0.tar.gz
 Source0  : https://github.com/junit-team/junit5/archive/r5.4.0.tar.gz
 Source1  : https://repo1.maven.org/maven2/org/junit/junit-bom/5.4.0/junit-bom-5.4.0.pom
@@ -12,6 +12,8 @@ Source2  : https://repo1.maven.org/maven2/org/junit/jupiter/junit-jupiter-api/5.
 Source3  : https://repo1.maven.org/maven2/org/junit/jupiter/junit-jupiter-api/5.1.0/junit-jupiter-api-5.1.0.pom
 Source4  : https://repo1.maven.org/maven2/org/junit/jupiter/junit-jupiter/5.5.1/junit-jupiter-5.5.1.jar
 Source5  : https://repo1.maven.org/maven2/org/junit/jupiter/junit-jupiter/5.5.1/junit-jupiter-5.5.1.pom
+Source6  : https://repo1.maven.org/maven2/org/junit/platform/junit-platform-commons/1.1.0/junit-platform-commons-1.1.0.jar
+Source7  : https://repo1.maven.org/maven2/org/junit/platform/junit-platform-commons/1.1.0/junit-platform-commons-1.1.0.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0 EPL-2.0
@@ -68,6 +70,12 @@ cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/org/junit/jupiter/junit
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/junit/jupiter/junit-jupiter/5.5.1
 cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/org/junit/jupiter/junit-jupiter/5.5.1/junit-jupiter-5.5.1.pom
 
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/junit/platform/junit-platform-commons/1.1.0
+cp %{SOURCE6} %{buildroot}/usr/share/java/.m2/repository/org/junit/platform/junit-platform-commons/1.1.0/junit-platform-commons-1.1.0.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/junit/platform/junit-platform-commons/1.1.0
+cp %{SOURCE7} %{buildroot}/usr/share/java/.m2/repository/org/junit/platform/junit-platform-commons/1.1.0/junit-platform-commons-1.1.0.pom
+
 
 %files
 %defattr(-,root,root,-)
@@ -79,6 +87,8 @@ cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/org/junit/jupiter/junit
 /usr/share/java/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.1.0/junit-jupiter-api-5.1.0.pom
 /usr/share/java/.m2/repository/org/junit/jupiter/junit-jupiter/5.5.1/junit-jupiter-5.5.1.jar
 /usr/share/java/.m2/repository/org/junit/jupiter/junit-jupiter/5.5.1/junit-jupiter-5.5.1.pom
+/usr/share/java/.m2/repository/org/junit/platform/junit-platform-commons/1.1.0/junit-platform-commons-1.1.0.jar
+/usr/share/java/.m2/repository/org/junit/platform/junit-platform-commons/1.1.0/junit-platform-commons-1.1.0.pom
 
 %files license
 %defattr(0644,root,root,0755)

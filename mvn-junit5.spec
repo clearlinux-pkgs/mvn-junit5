@@ -4,17 +4,23 @@
 #
 Name     : mvn-junit5
 Version  : 5.4.0
-Release  : 1
+Release  : 2
 URL      : https://github.com/junit-team/junit5/archive/r5.4.0.tar.gz
 Source0  : https://github.com/junit-team/junit5/archive/r5.4.0.tar.gz
 Source1  : https://repo1.maven.org/maven2/org/junit/junit-bom/5.4.0/junit-bom-5.4.0.pom
+Source2  : https://repo1.maven.org/maven2/org/junit/jupiter/junit-jupiter-api/5.1.0/junit-jupiter-api-5.1.0.jar
+Source3  : https://repo1.maven.org/maven2/org/junit/jupiter/junit-jupiter-api/5.1.0/junit-jupiter-api-5.1.0.pom
+Source4  : https://repo1.maven.org/maven2/org/junit/jupiter/junit-jupiter/5.5.1/junit-jupiter-5.5.1.jar
+Source5  : https://repo1.maven.org/maven2/org/junit/jupiter/junit-jupiter/5.5.1/junit-jupiter-5.5.1.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0 EPL-2.0
 Requires: mvn-junit5-data = %{version}-%{release}
 Requires: mvn-junit5-license = %{version}-%{release}
 BuildRequires : apache-ant
+BuildRequires : apache-maven
 BuildRequires : buildreq-mvn
+BuildRequires : gradle
 
 %description
 # JUnit 5
@@ -50,6 +56,18 @@ cp junit-platform-testkit/LICENSE.md %{buildroot}/usr/share/package-licenses/mvn
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/junit/junit-bom/5.4.0
 cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/junit/junit-bom/5.4.0/junit-bom-5.4.0.pom
 
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.1.0
+cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.1.0/junit-jupiter-api-5.1.0.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.1.0
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.1.0/junit-jupiter-api-5.1.0.pom
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/junit/jupiter/junit-jupiter/5.5.1
+cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/org/junit/jupiter/junit-jupiter/5.5.1/junit-jupiter-5.5.1.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/junit/jupiter/junit-jupiter/5.5.1
+cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/org/junit/jupiter/junit-jupiter/5.5.1/junit-jupiter-5.5.1.pom
+
 
 %files
 %defattr(-,root,root,-)
@@ -57,6 +75,10 @@ cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/junit/junit-bom/5.4
 %files data
 %defattr(-,root,root,-)
 /usr/share/java/.m2/repository/org/junit/junit-bom/5.4.0/junit-bom-5.4.0.pom
+/usr/share/java/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.1.0/junit-jupiter-api-5.1.0.jar
+/usr/share/java/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.1.0/junit-jupiter-api-5.1.0.pom
+/usr/share/java/.m2/repository/org/junit/jupiter/junit-jupiter/5.5.1/junit-jupiter-5.5.1.jar
+/usr/share/java/.m2/repository/org/junit/jupiter/junit-jupiter/5.5.1/junit-jupiter-5.5.1.pom
 
 %files license
 %defattr(0644,root,root,0755)

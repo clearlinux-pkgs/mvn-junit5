@@ -4,20 +4,22 @@
 #
 Name     : mvn-junit5
 Version  : 5.4.0
-Release  : 5
+Release  : 6
 URL      : https://github.com/junit-team/junit5/archive/r5.4.0.tar.gz
 Source0  : https://github.com/junit-team/junit5/archive/r5.4.0.tar.gz
-Source1  : https://repo.gradle.org/gradle/libs-releases/org/junit/platform/junit-platform-engine/1.3.1/junit-platform-engine-1.3.1.jar
-Source2  : https://repo.gradle.org/gradle/libs-releases/org/junit/platform/junit-platform-engine/1.3.1/junit-platform-engine-1.3.1.pom
-Source3  : https://repo.gradle.org/gradle/libs-releases/org/junit/platform/junit-platform-launcher/1.3.1/junit-platform-launcher-1.3.1.jar
-Source4  : https://repo.gradle.org/gradle/libs-releases/org/junit/platform/junit-platform-launcher/1.3.1/junit-platform-launcher-1.3.1.pom
-Source5  : https://repo1.maven.org/maven2/org/junit/junit-bom/5.4.0/junit-bom-5.4.0.pom
-Source6  : https://repo1.maven.org/maven2/org/junit/jupiter/junit-jupiter-api/5.1.0/junit-jupiter-api-5.1.0.jar
-Source7  : https://repo1.maven.org/maven2/org/junit/jupiter/junit-jupiter-api/5.1.0/junit-jupiter-api-5.1.0.pom
-Source8  : https://repo1.maven.org/maven2/org/junit/jupiter/junit-jupiter/5.5.1/junit-jupiter-5.5.1.jar
-Source9  : https://repo1.maven.org/maven2/org/junit/jupiter/junit-jupiter/5.5.1/junit-jupiter-5.5.1.pom
-Source10  : https://repo1.maven.org/maven2/org/junit/platform/junit-platform-commons/1.1.0/junit-platform-commons-1.1.0.jar
-Source11  : https://repo1.maven.org/maven2/org/junit/platform/junit-platform-commons/1.1.0/junit-platform-commons-1.1.0.pom
+Source1  : https://repo.gradle.org/gradle/libs-releases/org/junit/platform/junit-platform-commons/1.3.1/junit-platform-commons-1.3.1.jar
+Source2  : https://repo.gradle.org/gradle/libs-releases/org/junit/platform/junit-platform-commons/1.3.1/junit-platform-commons-1.3.1.pom
+Source3  : https://repo.gradle.org/gradle/libs-releases/org/junit/platform/junit-platform-engine/1.3.1/junit-platform-engine-1.3.1.jar
+Source4  : https://repo.gradle.org/gradle/libs-releases/org/junit/platform/junit-platform-engine/1.3.1/junit-platform-engine-1.3.1.pom
+Source5  : https://repo.gradle.org/gradle/libs-releases/org/junit/platform/junit-platform-launcher/1.3.1/junit-platform-launcher-1.3.1.jar
+Source6  : https://repo.gradle.org/gradle/libs-releases/org/junit/platform/junit-platform-launcher/1.3.1/junit-platform-launcher-1.3.1.pom
+Source7  : https://repo1.maven.org/maven2/org/junit/junit-bom/5.4.0/junit-bom-5.4.0.pom
+Source8  : https://repo1.maven.org/maven2/org/junit/jupiter/junit-jupiter-api/5.1.0/junit-jupiter-api-5.1.0.jar
+Source9  : https://repo1.maven.org/maven2/org/junit/jupiter/junit-jupiter-api/5.1.0/junit-jupiter-api-5.1.0.pom
+Source10  : https://repo1.maven.org/maven2/org/junit/jupiter/junit-jupiter/5.5.1/junit-jupiter-5.5.1.jar
+Source11  : https://repo1.maven.org/maven2/org/junit/jupiter/junit-jupiter/5.5.1/junit-jupiter-5.5.1.pom
+Source12  : https://repo1.maven.org/maven2/org/junit/platform/junit-platform-commons/1.1.0/junit-platform-commons-1.1.0.jar
+Source13  : https://repo1.maven.org/maven2/org/junit/platform/junit-platform-commons/1.1.0/junit-platform-commons-1.1.0.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0 EPL-2.0
@@ -59,38 +61,44 @@ cp LICENSE.md %{buildroot}/usr/share/package-licenses/mvn-junit5/LICENSE.md
 cp junit-jupiter-params/LICENSE-univocity-parsers.md %{buildroot}/usr/share/package-licenses/mvn-junit5/junit-jupiter-params_LICENSE-univocity-parsers.md
 cp junit-platform-console/LICENSE-picocli.md %{buildroot}/usr/share/package-licenses/mvn-junit5/junit-platform-console_LICENSE-picocli.md
 cp junit-platform-testkit/LICENSE.md %{buildroot}/usr/share/package-licenses/mvn-junit5/junit-platform-testkit_LICENSE.md
-mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/junit/platform/junit-platform-engine/1.3.1
-cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/junit/platform/junit-platform-engine/1.3.1/junit-platform-engine-1.3.1.jar
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/junit/platform/junit-platform-commons/1.3.1
+cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/junit/platform/junit-platform-commons/1.3.1/junit-platform-commons-1.3.1.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/junit/platform/junit-platform-commons/1.3.1
+cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/junit/platform/junit-platform-commons/1.3.1/junit-platform-commons-1.3.1.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/junit/platform/junit-platform-engine/1.3.1
-cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/junit/platform/junit-platform-engine/1.3.1/junit-platform-engine-1.3.1.pom
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/org/junit/platform/junit-platform-engine/1.3.1/junit-platform-engine-1.3.1.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/junit/platform/junit-platform-engine/1.3.1
+cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/org/junit/platform/junit-platform-engine/1.3.1/junit-platform-engine-1.3.1.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/junit/platform/junit-platform-launcher/1.3.1
-cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/org/junit/platform/junit-platform-launcher/1.3.1/junit-platform-launcher-1.3.1.jar
+cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/org/junit/platform/junit-platform-launcher/1.3.1/junit-platform-launcher-1.3.1.jar
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/junit/platform/junit-platform-launcher/1.3.1
-cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/org/junit/platform/junit-platform-launcher/1.3.1/junit-platform-launcher-1.3.1.pom
+cp %{SOURCE6} %{buildroot}/usr/share/java/.m2/repository/org/junit/platform/junit-platform-launcher/1.3.1/junit-platform-launcher-1.3.1.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/junit/junit-bom/5.4.0
-cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/org/junit/junit-bom/5.4.0/junit-bom-5.4.0.pom
+cp %{SOURCE7} %{buildroot}/usr/share/java/.m2/repository/org/junit/junit-bom/5.4.0/junit-bom-5.4.0.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.1.0
-cp %{SOURCE6} %{buildroot}/usr/share/java/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.1.0/junit-jupiter-api-5.1.0.jar
+cp %{SOURCE8} %{buildroot}/usr/share/java/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.1.0/junit-jupiter-api-5.1.0.jar
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.1.0
-cp %{SOURCE7} %{buildroot}/usr/share/java/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.1.0/junit-jupiter-api-5.1.0.pom
+cp %{SOURCE9} %{buildroot}/usr/share/java/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.1.0/junit-jupiter-api-5.1.0.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/junit/jupiter/junit-jupiter/5.5.1
-cp %{SOURCE8} %{buildroot}/usr/share/java/.m2/repository/org/junit/jupiter/junit-jupiter/5.5.1/junit-jupiter-5.5.1.jar
+cp %{SOURCE10} %{buildroot}/usr/share/java/.m2/repository/org/junit/jupiter/junit-jupiter/5.5.1/junit-jupiter-5.5.1.jar
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/junit/jupiter/junit-jupiter/5.5.1
-cp %{SOURCE9} %{buildroot}/usr/share/java/.m2/repository/org/junit/jupiter/junit-jupiter/5.5.1/junit-jupiter-5.5.1.pom
+cp %{SOURCE11} %{buildroot}/usr/share/java/.m2/repository/org/junit/jupiter/junit-jupiter/5.5.1/junit-jupiter-5.5.1.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/junit/platform/junit-platform-commons/1.1.0
-cp %{SOURCE10} %{buildroot}/usr/share/java/.m2/repository/org/junit/platform/junit-platform-commons/1.1.0/junit-platform-commons-1.1.0.jar
+cp %{SOURCE12} %{buildroot}/usr/share/java/.m2/repository/org/junit/platform/junit-platform-commons/1.1.0/junit-platform-commons-1.1.0.jar
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/junit/platform/junit-platform-commons/1.1.0
-cp %{SOURCE11} %{buildroot}/usr/share/java/.m2/repository/org/junit/platform/junit-platform-commons/1.1.0/junit-platform-commons-1.1.0.pom
+cp %{SOURCE13} %{buildroot}/usr/share/java/.m2/repository/org/junit/platform/junit-platform-commons/1.1.0/junit-platform-commons-1.1.0.pom
 
 
 %files
@@ -105,6 +113,8 @@ cp %{SOURCE11} %{buildroot}/usr/share/java/.m2/repository/org/junit/platform/jun
 /usr/share/java/.m2/repository/org/junit/jupiter/junit-jupiter/5.5.1/junit-jupiter-5.5.1.pom
 /usr/share/java/.m2/repository/org/junit/platform/junit-platform-commons/1.1.0/junit-platform-commons-1.1.0.jar
 /usr/share/java/.m2/repository/org/junit/platform/junit-platform-commons/1.1.0/junit-platform-commons-1.1.0.pom
+/usr/share/java/.m2/repository/org/junit/platform/junit-platform-commons/1.3.1/junit-platform-commons-1.3.1.jar
+/usr/share/java/.m2/repository/org/junit/platform/junit-platform-commons/1.3.1/junit-platform-commons-1.3.1.pom
 /usr/share/java/.m2/repository/org/junit/platform/junit-platform-engine/1.3.1/junit-platform-engine-1.3.1.jar
 /usr/share/java/.m2/repository/org/junit/platform/junit-platform-engine/1.3.1/junit-platform-engine-1.3.1.pom
 /usr/share/java/.m2/repository/org/junit/platform/junit-platform-launcher/1.3.1/junit-platform-launcher-1.3.1.jar
